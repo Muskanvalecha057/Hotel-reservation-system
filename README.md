@@ -1,94 +1,89 @@
 # 🏨 Hotel Reservation System - Java Swing Project
 
-This is a **Hotel Reservation System** built using Java Swing (GUI) and connected with a backend database. It allows users to search, book, cancel, and view hotel room reservations with a simple interface.
+This is a **Hotel Reservation System** built using Java Swing and connected to a backend MySQL database. It allows users to search, book, cancel, and view hotel room reservations.
 
 ---
 
 ## 🚀 Features
 
-- **Welcome and Login Pages**
-  - User authentication using database
-  - Stores and uses user ID after login
+- **Login System**
+  - User login with database validation
 
 - **Main Menu**
-  - Navigate to Search, Book, Cancel, or View pages
+  - Navigate to Search, Book, Cancel, and View options
 
 - **Room Search**
-  - Filter by room type, number of persons, check-in and check-out dates
-  - Shows room availability and prices
-  - If room is already booked during selected dates, shows status as **"Booked"**
+  - Filter by room type, check-in/out dates, and number of persons
+  - Rooms already booked for selected dates are marked as **"Booked"**
 
-- **Booking System**
-  - Room selection through a table with a **"Book" button**
-  - Displays booking confirmation page with:
-    - Room ID, type, price
-    - Check-in, check-out, number of persons
-    - Nights stayed and total amount
-  - Booking details saved to `bookings` table
+- **Booking Confirmation**
+  - Shows selected room and stay details
+  - Data passed via static variables
+  - Booking saved in database
 
-- **Receipt Page**
-  - Fetches and displays combined data from:
-    - `users` table (name, email, etc.)
-    - `bookings` table (check-in, check-out, etc.)
-    - `room` table (room details)
+- **Booking Receipt**
+  - Combines user, room, and booking details
+  - Shows full receipt after booking
 
-- **Booking Cancellation**
-  - User provides Booking ID and User ID
-  - System fetches details and:
-    - If current date < check-out: updates check-out to today & calculates **refund**
-    - If today == check-out: shows **already checked out**
-    - If stay is completed: shows **stay completed**
+- **Cancel Booking**
+  - Allows cancellation based on current date and check-out
+  - Calculates refund if applicable
+  - Shows appropriate message if already checked out or stay completed
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Java Swing** (GUI)
-- **NetBeans** (Drag & Drop Interface)
-- **MySQL** (Database)
-- **JDBC** (Java Database Connectivity)
+- Java Swing (GUI)
+- NetBeans IDE (Drag-and-Drop)
+- MySQL
+- JDBC
 
 ---
 
 ## 📁 Database Structure
 
-### `users` Table
-- `user_id` (PK)
-- `name`, `email`, `phone`, `cnic`
-
-### `room` Table
-- `room_id` (PK)
-- `type`, `price`, `status`, `capacity`
-
-### `bookings` Table
-- `booking_id` (PK)
-- `user_id` (FK)
-- `room_id` (FK)
-- `check_in`, `check_out`, `persons`
+- **users**: user_id, name, email, phone, cnic
+- **room**: room_id, type, price, status, capacity
+- **bookings**: booking_id, user_id, room_id, check_in, check_out, persons
 
 ---
 
 ## ✅ How to Run
 
-1. Clone the project in NetBeans
-2. Set up MySQL database and update DB connection in Java
-3. Run the project starting from the **Welcome.java** file
-4. Login or register as a user
-5. Search, Book, or Cancel rooms easily!
+1. Open project in NetBeans
+2. Configure your MySQL DB credentials in DB connection file
+3. Run `Welcome.java`
+4. Login or create an account
+5. Start booking, viewing, or canceling rooms!
 
 ---
 
-## 📌 Notes
+## 🖼️ GUI Screenshots
 
-- All data is passed between forms using static variables
-- Room availability is checked before booking
-- GUI fully developed using NetBeans drag-and-drop interface
-- Supports basic validation and edge case handling
+### 🔹 Welcome Page
+![Welcome Page](screenshots/welcome page.png)
+
+### 🔹 Login Page
+![Login Page](screenshots/Login page.png)
+
+### 🔹 User Menu
+![User Menu](screenshots/user menu.png)
+
+### 🔹 Room Search
+![Room Search](screenshots/room search.png)
+
+### 🔹 Booking Receipt
+![Receipt](screenshots/Receipt.png)
+
+### 🔹 Cancel Booking
+![Cancel Booking](screenshots/cancel booking.png)
 
 ---
 
-## 👤 Developed By
+## 👩‍💻 Developed By
 
 **Muskan Valecha**  
-Bachelor's in Computer Science  
-Special interest in UI/UX and Java-based systems  
+Student of Computer Science  
+Interested in UI/UX and Java Projects
+
